@@ -22,7 +22,7 @@ class _MyHomePageState extends State<WrapTest> {
           },
           color: Colors.white,
         ),
-        title: Text("WrapTest"),
+        title: Text("Wrap"),
       ),
       body: Center(
         child: Wrap(

@@ -12,7 +12,7 @@ class _InnerState extends State<FlexibleTest> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('FutureBuilder')),
+      appBar: AppBar(title: Text('Flexible')),
       body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

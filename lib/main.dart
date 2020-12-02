@@ -15,6 +15,17 @@ void main() {
   runApp(MyApp());
 }
 
+const SafeAreaPage = "SafeArea";
+const WrapPage = "Wrap";
+const RichTextPage = "RichText";
+const ClipRRectPage = "ClipRRect";
+const MediaQueryPage = "MediaQuery";
+const FutureBuilderPage = "FutureBuilder";
+const FlexiblePage = "Flexible";
+const SizedBoxPage = "SizedBox";
+const AlignPage = "Align";
+const StackPage = "Stack";
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -25,6 +36,18 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
+      routes: {
+        SafeAreaPage: (context) => SafeAreaTest(),
+        WrapPage: (context) => WrapTest(),
+        RichTextPage: (context) => RichTextTest(),
+        ClipRRectPage: (context) => ClipRRectTest(),
+        MediaQueryPage: (context) => MediaQueryTest(),
+        FutureBuilderPage: (context) => FutureBuilderTest(),
+        FlexiblePage: (context) => FlexibleTest(),
+        SizedBoxPage: (context) => SizedBoxTest(),
+        AlignPage: (context) => AlignTest(),
+        StackPage: (context) => StackTest(),
+      },
     );
   }
 }
@@ -51,52 +74,52 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             FlatButton(
-              onPressed: () => gotoSafeAreaPage(context),
+              onPressed: () => Navigator.pushNamed(context, SafeAreaPage),
               child: Text("SafeArea Widget"),
             ),
             SizedBox(height: 15),
             FlatButton(
-              onPressed: () => gotoWrapPage(context),
+              onPressed: () => Navigator.pushNamed(context, WrapPage),
               child: Text("Wrap Widget"),
             ),
             SizedBox(height: 15),
             FlatButton(
-              onPressed: () => gotoRichTextPage(context),
+              onPressed: () => Navigator.pushNamed(context, RichTextPage),
               child: Text("RichText Widget"),
             ),
             SizedBox(height: 15),
             FlatButton(
-              onPressed: () => gotoClipRRectPage(context),
+              onPressed: () => Navigator.pushNamed(context, ClipRRectPage),
               child: Text("ClipRRect Widget"),
             ),
             SizedBox(height: 15),
             FlatButton(
-              onPressed: () => gotoMediaQueryPage(context),
+              onPressed: () => Navigator.pushNamed(context, MediaQueryPage),
               child: Text("MediaQuery"),
             ),
             SizedBox(height: 15),
             FlatButton(
-              onPressed: () => gotoFutureBuilderPage(context),
+              onPressed: () => Navigator.pushNamed(context, FutureBuilderPage),
               child: Text("FutureBuilder"),
             ),
             SizedBox(height: 15),
             FlatButton(
-              onPressed: () => gotoFlexiblePage(context),
+              onPressed: () => Navigator.pushNamed(context, FlexiblePage),
               child: Text("Flexible Widget"),
             ),
             SizedBox(height: 15),
             FlatButton(
-              onPressed: () => gotoSizedBoxPage(context),
+              onPressed: () => Navigator.pushNamed(context, SizedBoxPage),
               child: Text("SizedBox Widget"),
             ),
             SizedBox(height: 15),
             FlatButton(
-              onPressed: () => gotoAlignPage(context),
+              onPressed: () => Navigator.pushNamed(context, AlignPage),
               child: Text("Align Widget"),
             ),
             SizedBox(height: 15),
             FlatButton(
-              onPressed: () => gotoStackPage(context),
+              onPressed: () => Navigator.pushNamed(context, StackPage),
               child: Text("Stack Widget"),
             ),
           ],
@@ -106,62 +129,3 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-void gotoSafeAreaPage(BuildContext context) {
-  Navigator.push(context, CupertinoPageRoute(builder: (context) {
-    return SafeAreaTest();
-  }));
-}
-
-void gotoWrapPage(BuildContext context) {
-  Navigator.push(context, CupertinoPageRoute(builder: (context) {
-    return WrapTest();
-  }));
-}
-
-void gotoRichTextPage(BuildContext context) {
-  Navigator.push(context, CupertinoPageRoute(builder: (context) {
-    return RichTextTest();
-  }));
-}
-
-void gotoClipRRectPage(BuildContext context) {
-  Navigator.push(context, CupertinoPageRoute(builder: (context) {
-    return ClipRRectTest();
-  }));
-}
-
-void gotoMediaQueryPage(BuildContext context) {
-  Navigator.push(context, CupertinoPageRoute(builder: (context) {
-    return MediaQueryTest();
-  }));
-}
-
-void gotoFutureBuilderPage(BuildContext context) {
-  Navigator.push(context, CupertinoPageRoute(builder: (context) {
-    return FutureBuilderTest();
-  }));
-}
-
-void gotoFlexiblePage(BuildContext context) {
-  Navigator.push(context, CupertinoPageRoute(builder: (context) {
-    return FlexibleTest();
-  }));
-}
-
-void gotoSizedBoxPage(BuildContext context) {
-  Navigator.push(context, CupertinoPageRoute(builder: (context) {
-    return SizedBoxTest();
-  }));
-}
-
-void gotoAlignPage(BuildContext context) {
-  Navigator.push(context, CupertinoPageRoute(builder: (context) {
-    return AlignTest();
-  }));
-}
-
-void gotoStackPage(BuildContext context) {
-  Navigator.push(context, CupertinoPageRoute(builder: (context) {
-    return StackTest();
-  }));
-}
